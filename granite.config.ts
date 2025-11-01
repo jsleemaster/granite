@@ -5,6 +5,6 @@ import { hermes } from '@granite-js/plugin-hermes';
 export default defineConfig({
   scheme: 'fortune',
   appName: 'fortune-teller',
-  entryFile: 'src/_app.tsx',
+  entryFile: 'index.js',
   plugins: [router(), hermes()],
 });
