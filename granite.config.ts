@@ -6,8 +6,5 @@ export default defineConfig({
   scheme: 'fortune',
   appName: 'fortune-teller',
   entryFile: 'src/_app.tsx',
-  plugins: [
-    router(),
-    hermes(),
-  ],
+  plugins: [router(), hermes()],
 });
