@@ -11,7 +11,14 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["react", "react-native"]
+    "types": ["react", "react-native"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@pages/*": ["pages/*"],
+      "@src/*": ["src/*"],
+      "@theme/*": ["src/theme/*"]
+    }
   },
   "include": ["src/**/*", "pages/**/*"],
   "exclude": ["node_modules", "dist"]
