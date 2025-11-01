@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createRoute, useNavigation } from '@granite-js/react-native';
-import { colors } from '@theme/colors';
+import { colors } from '../src/theme/colors';
 
 export const Route = createRoute('/history', {
   validateParams: () => ({}),
