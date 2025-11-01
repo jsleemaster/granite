@@ -14,6 +14,9 @@ importers:
       '@granite-js/react-native':
         specifier: 0.1.30
         version: 0.1.30(@granite-js/native@0.1.30(@babel/core@7.23.9)(@babel/preset-env@7.23.3(@babel/core@7.23.9))(@babel/runtime@7.18.9)(react-native@0.72.6(@babel/core@7.23.9)(@babel/preset-env@7.23.3(@babel/core@7.23.9))(react@18.2.0))(react@18.2.0))(@swc/helpers@0.5.13)(@types/node@22.18.13)(@types/react@18.3.3)(jiti@1.21.7)(react-native@0.72.6(@babel/core@7.23.9)(@babel/preset-env@7.23.3(@babel/core@7.23.9))(react@18.2.0))(react@18.2.0)(typescript@5.9.3)(yaml@2.8.1)
+      '@react-native-async-storage/async-storage':
+        specifier: ^2.2.0
+        version: 2.2.0(react-native@0.72.6(@babel/core@7.23.9)(@babel/preset-env@7.23.3(@babel/core@7.23.9))(react@18.2.0))
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -1682,6 +1685,11 @@ packages:
     resolution: {integrity: sha512-dM8AfdoeIxlh+zqgr0o5+vCTPQ0Ru1mrPzONZMsr7ufp5h+6WgNxQNza7t0r5qQ6b04AJqTlBNixTWZxqP649Q==}
     peerDependencies:
       react-native: ^0.0.0-0 || 0.60 - 0.72 || 1000.0.0
+
+  '@react-native-async-storage/async-storage@2.2.0':
+    resolution: {integrity: sha512-gvRvjR5JAaUZF8tv2Kcq/Gbt3JHwbKFYfmb445rhOj6NUMx3qPLixmDx5pZAyb9at1bYvJ4/eTUipU5aki45xw==}
+    peerDependencies:
+      react-native: ^0.0.0-0 || >=0.65 <1.0
 
   '@react-native-community/blur@4.3.2':
     resolution: {integrity: sha512-0ID+pyZKdC4RdgC7HePxUQ6JmsbNrgz03u+6SgqYpmBoK/rE+7JffqIw7IEsfoKitLEcRNLGekIBsfwCqiEkew==}
@@ -7599,6 +7607,11 @@ snapshots:
     optional: true
 
   '@react-native-async-storage/async-storage@1.18.2(react-native@0.72.6(@babel/core@7.23.9)(@babel/preset-env@7.23.3(@babel/core@7.23.9))(react@18.2.0))':
+    dependencies:
+      merge-options: 3.0.4
+      react-native: 0.72.6(@babel/core@7.23.9)(@babel/preset-env@7.23.3(@babel/core@7.23.9))(react@18.2.0)
+
+  '@react-native-async-storage/async-storage@2.2.0(react-native@0.72.6(@babel/core@7.23.9)(@babel/preset-env@7.23.3(@babel/core@7.23.9))(react@18.2.0))':
     dependencies:
       merge-options: 3.0.4
       react-native: 0.72.6(@babel/core@7.23.9)(@babel/preset-env@7.23.3(@babel/core@7.23.9))(react@18.2.0)
