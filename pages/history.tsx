@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createRoute, useNavigation } from '@granite-js/react-native';
+import { colors } from '../src/theme/colors';
 
 export const Route = createRoute('/history', {
   validateParams: () => ({}),
@@ -101,7 +102,7 @@ function HistoryScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F9FA',
+    backgroundColor: colors.background,
   },
   header: {
     flexDirection: 'row',
@@ -109,29 +110,29 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 20,
     paddingTop: 60,
-    backgroundColor: 'white',
+    backgroundColor: colors.surface,
     borderBottomWidth: 1,
-    borderBottomColor: '#E9ECEF',
+    borderBottomColor: colors.border,
   },
   backButton: {
     padding: 8,
   },
   backButtonText: {
     fontSize: 16,
-    color: '#6C5CE7',
+    color: colors.primary,
     fontWeight: '600',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#2D3436',
+    color: colors.text,
   },
   clearButton: {
     padding: 8,
   },
   clearButtonText: {
     fontSize: 14,
-    color: '#FF6B6B',
+    color: colors.error,
   },
   scrollView: {
     flex: 1,
@@ -147,32 +148,34 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     fontSize: 18,
-    color: '#868E96',
+    color: colors.textSecondary,
     marginBottom: 8,
   },
   emptySubtext: {
     fontSize: 14,
-    color: '#ADB5BD',
+    color: colors.textLight,
   },
   card: {
-    backgroundColor: 'white',
+    backgroundColor: colors.surface,
     borderRadius: 16,
     padding: 20,
     marginBottom: 16,
-    shadowColor: '#000',
+    shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
+    shadowOpacity: 0.06,
     shadowRadius: 8,
     elevation: 2,
+    borderWidth: 1,
+    borderColor: colors.border,
   },
   date: {
     fontSize: 12,
-    color: '#868E96',
+    color: colors.textSecondary,
     marginBottom: 12,
   },
   fortune: {
     fontSize: 18,
-    color: '#2D3436',
+    color: colors.text,
     marginBottom: 16,
     lineHeight: 26,
   },
@@ -181,20 +184,20 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingTop: 16,
     borderTopWidth: 1,
-    borderTopColor: '#F1F3F5',
+    borderTopColor: colors.divider,
   },
   infoItem: {
     flex: 1,
   },
   infoLabel: {
     fontSize: 12,
-    color: '#868E96',
+    color: colors.textSecondary,
     marginBottom: 6,
   },
   luckyNumber: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#6C5CE7',
+    color: colors.primary,
   },
   colorInfo: {
     flexDirection: 'row',
@@ -206,10 +209,10 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginRight: 8,
     borderWidth: 1,
-    borderColor: '#DEE2E6',
+    borderColor: colors.border,
   },
   colorName: {
     fontSize: 14,
-    color: '#2D3436',
+    color: colors.text,
   },
 });

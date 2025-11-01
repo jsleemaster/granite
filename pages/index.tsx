@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Animated } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createRoute, useNavigation } from '@granite-js/react-native';
+import { colors } from '../src/theme/colors';
 
 export const Route = createRoute('/', {
   validateParams: () => ({}),
@@ -131,7 +132,7 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F9FA',
+    backgroundColor: colors.background,
     padding: 20,
     justifyContent: 'center',
   },
@@ -142,41 +143,43 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#2D3436',
+    color: colors.text,
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
-    color: '#636E72',
+    color: colors.textSecondary,
   },
   card: {
-    backgroundColor: 'white',
+    backgroundColor: colors.surface,
     borderRadius: 20,
     padding: 30,
     marginBottom: 30,
     minHeight: 250,
     justifyContent: 'center',
-    shadowColor: '#000',
+    shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
     elevation: 5,
+    borderWidth: 1,
+    borderColor: colors.border,
   },
   fortuneText: {
     fontSize: 24,
     textAlign: 'center',
-    color: '#2D3436',
+    color: colors.text,
     lineHeight: 36,
     marginBottom: 20,
   },
   emptyText: {
     fontSize: 18,
     textAlign: 'center',
-    color: '#B2BEC3',
+    color: colors.textLight,
   },
   divider: {
     height: 1,
-    backgroundColor: '#DFE6E9',
+    backgroundColor: colors.divider,
     marginVertical: 20,
   },
   luckySection: {
@@ -184,13 +187,13 @@ const styles = StyleSheet.create({
   },
   luckyLabel: {
     fontSize: 14,
-    color: '#636E72',
+    color: colors.textSecondary,
     marginBottom: 8,
   },
   luckyNumber: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: '#6C5CE7',
+    color: colors.primary,
   },
   colorContainer: {
     flexDirection: 'row',
@@ -202,32 +205,32 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginRight: 12,
     borderWidth: 2,
-    borderColor: '#DFE6E9',
+    borderColor: colors.border,
   },
   colorName: {
     fontSize: 20,
-    color: '#2D3436',
+    color: colors.text,
   },
   button: {
-    backgroundColor: '#6C5CE7',
+    backgroundColor: colors.primary,
     paddingVertical: 18,
     paddingHorizontal: 40,
     borderRadius: 30,
     alignItems: 'center',
-    shadowColor: '#6C5CE7',
+    shadowColor: colors.primary,
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.25,
     shadowRadius: 8,
     elevation: 5,
   },
   buttonText: {
-    color: 'white',
+    color: colors.surface,
     fontSize: 18,
     fontWeight: 'bold',
   },
   footer: {
     textAlign: 'center',
-    color: '#B2BEC3',
+    color: colors.textLight,
     fontSize: 14,
     marginTop: 20,
   },
@@ -239,7 +242,7 @@ const styles = StyleSheet.create({
   },
   historyButtonText: {
     fontSize: 14,
-    color: '#6C5CE7',
+    color: colors.primary,
     fontWeight: '600',
   },
 });
