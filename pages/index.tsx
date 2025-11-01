@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createRoute, useNavigation } from '@granite-js/react-native';
 import { colors } from '../src/theme/colors';
 
-export const Route = createRoute('/', {
+export const Route = createRoute('/' as const, {
   validateParams: () => ({}),
   component: HomeScreen,
 });

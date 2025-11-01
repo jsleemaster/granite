@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createRoute, useNavigation } from '@granite-js/react-native';
 import { colors } from '../src/theme/colors';
 
-export const Route = createRoute('/history', {
+export const Route = createRoute('/history' as const, {
   validateParams: () => ({}),
   component: HistoryScreen,
 });
