@@ -1,26 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "lib": ["ES2020"],
+    "rootDir": ".",
+    "baseUrl": "src",
+    "target": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext"],
+    "types": ["react-native"],
     "jsx": "react-native",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["react", "react-native"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"],
-      "@pages/*": ["pages/*"],
-      "@src/*": ["src/*"],
-      "@theme/*": ["src/theme/*"],
-      "@theme/colors": ["src/theme/colors.ts"]
-    }
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
-  "include": ["src/**/*", "pages/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

@@ -1,5 +1,0 @@
-node_modules/
-dist/
-.granite/
-src/router.gen.ts
-*.log
