@@ -29,7 +29,7 @@ const luckyColors = [
 
 function Page() {
   const navigation = Route.useNavigation();
-  const [fortune, setFortune] = useState<string>('');
+  const [fortune, setFortune] = useState<string | null>(null);
   const [luckyNumber, setLuckyNumber] = useState<number | null>(null);
   const [luckyColor, setLuckyColor] = useState<(typeof luckyColors)[0] | null>(null);
   const [scaleAnim] = useState(new Animated.Value(1));
@@ -50,9 +50,9 @@ function Page() {
     ]).start();
 
     // 랜덤 운세 생성
-    const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+    const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)]!;
     const randomNumber = Math.floor(Math.random() * 100) + 1;
-    const randomColor = luckyColors[Math.floor(Math.random() * luckyColors.length)];
+    const randomColor = luckyColors[Math.floor(Math.random() * luckyColors.length)]!;
 
     setFortune(randomFortune);
     setLuckyNumber(randomNumber);
