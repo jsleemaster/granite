@@ -1,7 +1,6 @@
 import { createRoute } from '@granite-js/react-native';
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Animated } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from '../theme/colors';
 
 export const Route = createRoute('/', {
@@ -59,24 +58,8 @@ function Page() {
     setLuckyNumber(randomNumber);
     setLuckyColor(randomColor);
 
-    // 히스토리에 저장
-    try {
-      const newEntry = {
-        id: Date.now().toString(),
-        date: new Date().toLocaleString('ko-KR'),
-        fortune: randomFortune,
-        luckyNumber: randomNumber,
-        luckyColor: randomColor,
-      };
-
-      const stored = await AsyncStorage.getItem('fortune_history');
-      const history = stored ? JSON.parse(stored) : [];
-      const updatedHistory = [newEntry, ...history].slice(0, 20);
-
-      await AsyncStorage.setItem('fortune_history', JSON.stringify(updatedHistory));
-    } catch (error) {
-      console.error('히스토리 저장 실패:', error);
-    }
+    // 히스토리 저장은 나중에 구현
+    console.log('운세 생성:', { randomFortune, randomNumber, randomColor });
   };
 
   return (
