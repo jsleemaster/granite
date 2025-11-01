@@ -1,0 +1,22 @@
+{
+  "name": "fortune-teller",
+  "version": "1.0.0",
+  "description": "오늘의 운세 - Granite 기반 모바일 앱",
+  "main": "src/_app.tsx",
+  "scripts": {
+    "dev": "granite dev",
+    "build": "granite build"
+  },
+  "dependencies": {
+    "@granite-js/react-native": "latest",
+    "react": "^18.2.0",
+    "react-native": "^0.72.0"
+  },
+  "devDependencies": {
+    "@granite-js/plugin-router": "latest",
+    "@granite-js/plugin-hermes": "latest",
+    "@types/react": "^18.2.0",
+    "@types/react-native": "^0.72.0",
+    "typescript": "^5.0.0"
+  }
+}
