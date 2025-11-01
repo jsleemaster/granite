@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
-import { colors } from '../src/theme/colors';
+import { colors } from '@theme/colors';
 
 interface LayoutProps {
   children: React.ReactNode;
