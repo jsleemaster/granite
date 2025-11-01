@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Animated } from 'react-native';
-import { createRoute } from '@granite-js/react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Animated, AsyncStorage } from 'react-native';
+import { createRoute, useNavigation } from '@granite-js/react-native';
 
 export const Route = createRoute('/', {
-  validateParams: params => params,
+  validateParams: () => ({}),
   component: HomeScreen,
 });
 
@@ -28,12 +28,13 @@ const luckyColors = [
 ];
 
 function HomeScreen() {
+  const navigation = useNavigation();
   const [fortune, setFortune] = useState<string>('');
   const [luckyNumber, setLuckyNumber] = useState<number | null>(null);
   const [luckyColor, setLuckyColor] = useState<(typeof luckyColors)[0] | null>(null);
   const [scaleAnim] = useState(new Animated.Value(1));
 
-  const getFortune = () => {
+  const getFortune = async () => {
     // 애니메이션 효과
     Animated.sequence([
       Animated.timing(scaleAnim, {
@@ -56,6 +57,25 @@ function HomeScreen() {
     setFortune(randomFortune);
     setLuckyNumber(randomNumber);
     setLuckyColor(randomColor);
+
+    // 히스토리에 저장
+    try {
+      const newEntry = {
+        id: Date.now().toString(),
+        date: new Date().toLocaleString('ko-KR'),
+        fortune: randomFortune,
+        luckyNumber: randomNumber,
+        luckyColor: randomColor,
+      };
+
+      const stored = await AsyncStorage.getItem('fortune_history');
+      const history = stored ? JSON.parse(stored) : [];
+      const updatedHistory = [newEntry, ...history].slice(0, 20); // 최근 20개만 저장
+
+      await AsyncStorage.setItem('fortune_history', JSON.stringify(updatedHistory));
+    } catch (error) {
+      console.error('히스토리 저장 실패:', error);
+    }
   };
 
   return (
@@ -63,6 +83,12 @@ function HomeScreen() {
       <View style={styles.header}>
         <Text style={styles.title}>🔮 오늘의 운세</Text>
         <Text style={styles.subtitle}>심심할 때 운세를 확인해보세요!</Text>
+        <TouchableOpacity
+          style={styles.historyButton}
+          onPress={() => navigation.navigate('/history')}
+        >
+          <Text style={styles.historyButtonText}>📜 히스토리</Text>
+        </TouchableOpacity>
       </View>
 
       <Animated.View style={[styles.card, { transform: [{ scale: scaleAnim }] }]}>
@@ -203,5 +229,16 @@ const styles = StyleSheet.create({
     color: '#B2BEC3',
     fontSize: 14,
     marginTop: 20,
+  },
+  historyButton: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    padding: 8,
+  },
+  historyButtonText: {
+    fontSize: 14,
+    color: '#6C5CE7',
+    fontWeight: '600',
   },
 });
