@@ -2,7 +2,7 @@
   "name": "fortune-teller",
   "version": "1.0.0",
   "description": "오늘의 운세 - Granite 기반 모바일 앱",
-  "main": "src/_app.tsx",
+  "main": "index.js",
   "scripts": {
     "dev": "granite dev",
     "build": "granite build",
