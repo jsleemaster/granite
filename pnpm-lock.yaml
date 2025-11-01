@@ -11,6 +11,9 @@ importers:
       '@granite-js/react-native':
         specifier: latest
         version: 0.1.30(@granite-js/native@0.1.30(@babel/core@7.28.5)(@babel/preset-env@7.23.3(@babel/core@7.28.5))(@babel/runtime@7.28.4)(react-native@0.72.17(@babel/core@7.28.5)(@babel/preset-env@7.23.3(@babel/core@7.28.5))(react@18.3.1))(react@18.3.1))(@swc/helpers@0.5.13)(@types/node@24.9.2)(@types/react@18.3.26)(jiti@1.21.7)(react-native@0.72.17(@babel/core@7.28.5)(@babel/preset-env@7.23.3(@babel/core@7.28.5))(react@18.3.1))(react@18.3.1)(typescript@5.9.3)(yaml@2.8.1)
+      '@react-native-async-storage/async-storage':
+        specifier: ^1.19.0
+        version: 1.24.0(react-native@0.72.17(@babel/core@7.28.5)(@babel/preset-env@7.23.3(@babel/core@7.28.5))(react@18.3.1))
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -1473,6 +1476,11 @@ packages:
     resolution: {integrity: sha512-dM8AfdoeIxlh+zqgr0o5+vCTPQ0Ru1mrPzONZMsr7ufp5h+6WgNxQNza7t0r5qQ6b04AJqTlBNixTWZxqP649Q==}
     peerDependencies:
       react-native: ^0.0.0-0 || 0.60 - 0.72 || 1000.0.0
+
+  '@react-native-async-storage/async-storage@1.24.0':
+    resolution: {integrity: sha512-W4/vbwUOYOjco0x3toB8QCr7EjIP6nE9G7o8PMguvvjYT5Awg09lyV4enACRx4s++PPulBiBSjL0KTFx2u0Z/g==}
+    peerDependencies:
+      react-native: ^0.0.0-0 || >=0.60 <1.0
 
   '@react-native-community/blur@4.3.2':
     resolution: {integrity: sha512-0ID+pyZKdC4RdgC7HePxUQ6JmsbNrgz03u+6SgqYpmBoK/rE+7JffqIw7IEsfoKitLEcRNLGekIBsfwCqiEkew==}
@@ -7394,6 +7402,11 @@ snapshots:
     optional: true
 
   '@react-native-async-storage/async-storage@1.18.2(react-native@0.72.17(@babel/core@7.28.5)(@babel/preset-env@7.23.3(@babel/core@7.28.5))(react@18.3.1))':
+    dependencies:
+      merge-options: 3.0.4
+      react-native: 0.72.17(@babel/core@7.28.5)(@babel/preset-env@7.23.3(@babel/core@7.28.5))(react@18.3.1)
+
+  '@react-native-async-storage/async-storage@1.24.0(react-native@0.72.17(@babel/core@7.28.5)(@babel/preset-env@7.23.3(@babel/core@7.28.5))(react@18.3.1))':
     dependencies:
       merge-options: 3.0.4
       react-native: 0.72.17(@babel/core@7.28.5)(@babel/preset-env@7.23.3(@babel/core@7.28.5))(react@18.3.1)
