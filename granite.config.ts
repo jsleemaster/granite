@@ -6,7 +6,7 @@ import path from 'path';
 export default defineConfig({
   scheme: 'fortune',
   appName: 'fortune-teller',
-  entryFile: 'index.js',
+  entryFile: 'src/_app.tsx',
   plugins: [router(), hermes()],
   build: {
     resolver: {
