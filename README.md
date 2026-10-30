@@ -108,3 +108,8 @@ The fortune generation logic uses TypeScript's non-null assertion operator (`!`)
 3. Make your changes
 4. Run tests and linting
 5. Submit a pull request
+
+## Agent Setup
+
+- Codex reads `AGENTS.md`; Claude Code reads `CLAUDE.md`, which imports `AGENTS.md`.
+- Change project rules only in `AGENTS.md`; `CLAUDE.md` holds Claude-specific differences.
